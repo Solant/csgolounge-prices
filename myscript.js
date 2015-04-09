@@ -14,10 +14,10 @@ getPricesWithCurrency();
 
 function getPrices(currencyId){
 	$(".item").not(":has(.value)").each(function(index){
-		$(this).prepend("<div class='value'>Loading</div>");
 		var itemName = $(this).children("img").attr("alt");
 		if(itemName == "Any Offers" || itemName == "Any Knife" || itemName == "Any Key" || itemName == "Real Money" || itemName == "Dota Items" || itemName[0] == ":")
 			return;
+		$(this).prepend("<div class='value'>Loading</div>");
 		var itemPrice;
 		var itemUrl = "https://steamcommunity.com/market/priceoverview/?currency="+currencyId+"&appid=730&market_hash_name="+encodeURIComponent(itemName);
 		var xhr = new XMLHttpRequest();
