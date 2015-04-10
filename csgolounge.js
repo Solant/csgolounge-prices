@@ -18,7 +18,7 @@ function getPrices(currencyId){
         var itemRarity = $(this).children(".rarity").html();
 		if(itemName.startsWith("Any") || itemRarity == "Gift" || itemRarity == "Card" || itemName == "+ More"
             || itemRarity == "DLC" || itemRarity == "Background" || itemRarity == "Icon" || itemName == "Not Tradable"
-            || itemName == "Dota Items" || itemName == "TF2 Items")
+            || itemName == "Dota Items" || itemName == "TF2 Items" || itemName == "Real Money")
 			return;
 		$(this).prepend("<div class='value'>Loading</div>");
 		var itemPrice;
