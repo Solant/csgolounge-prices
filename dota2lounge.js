@@ -17,8 +17,8 @@ function getPrices(currencyId){
 		var itemName = $(this).children("img").attr("alt");
         var itemRarity = $(this).children(".rarity").html();
 		if(itemName.startsWith("Any") || itemRarity == "Gift" || itemRarity == "Card" || itemName == "+ More"
-            || itemRarity == "DLC" || itemRarity == "Background" || itemRarity == "Icon" || itemName == "Not Tradable")
-			return;
+            || itemRarity == "DLC" || itemRarity == "Background" || itemRarity == "Icon" || itemName == "Not Tradable" || itemName == "Real Money" || itemName == "Offers")
+            return;
 		$(this).prepend("<div class='value'>Loading</div>");
 		var itemPrice;
 		var itemUrl = "https://steamcommunity.com/market/priceoverview/?currency="+currencyId+"&appid=570&market_hash_name="+encodeURIComponent(itemName);
