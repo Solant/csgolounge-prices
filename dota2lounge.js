@@ -1,4 +1,4 @@
-/*! CSGO Lounge prices | (c)  2015 Solant */
+/*! Lounge prices | (c)  2015 Solant */
 
 function getPricesWithCurrency(){
 	chrome.storage.sync.get({
@@ -15,11 +15,13 @@ getPricesWithCurrency();
 function getPrices(currencyId){
 	$(".item").not(":has(.value)").each(function(index){
 		var itemName = $(this).children("img").attr("alt");
-		if(itemName == "Any Offers" || itemName == "Any Knife" || itemName == "Any Key" || itemName == "Real Money" || itemName == "Dota Items" || itemName[0] == ":")
+        var itemRarity = $(this).children(".rarity").html();
+		if(itemName.startsWith("Any") || itemRarity == "Gift" || itemRarity == "Card" || itemName == "+ More"
+            || itemRarity == "DLC" || itemRarity == "Background" || itemRarity == "Icon" || itemName == "Not Tradable")
 			return;
 		$(this).prepend("<div class='value'>Loading</div>");
 		var itemPrice;
-		var itemUrl = "https://steamcommunity.com/market/priceoverview/?currency="+currencyId+"&appid=730&market_hash_name="+encodeURIComponent(itemName);
+		var itemUrl = "https://steamcommunity.com/market/priceoverview/?currency="+currencyId+"&appid=570&market_hash_name="+encodeURIComponent(itemName);
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET", itemUrl, true);
 		xhr.onreadystatechange = (function(selector) {

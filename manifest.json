@@ -1,13 +1,13 @@
 {
-  "name": "CSGO Lounge prices",
+  "name": "Lounge prices",
   "manifest_version": 2,
-  "version": "0.1",
+  "version": "0.2",
   "permissions": [
     "https://*/",
 	"storage",
 	"tabs"
     ],
-  "description": "Show prices on csgolounge items",
+  "description": "Show item prices on csgolounge and dota2lounge sites.",
   "options_ui": {
     "page": "options.html",
     "chrome_style": true
@@ -17,7 +17,12 @@
   "content_scripts": [
     {
       "matches": ["*://csgolounge.com/*"],
-      "js": ["jquery-2.1.3.min.js", "myscript.js"],
+      "js": ["jquery-2.1.3.min.js", "csgolounge.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["*://dota2lounge.com/*"],
+      "js": ["jquery-2.1.3.min.js", "dota2lounge.js"],
       "run_at": "document_end"
     }
   ]
