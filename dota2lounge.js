@@ -26,7 +26,7 @@ function getPrices(currencyId){
 		xhr.open("GET", itemUrl, true);
 		xhr.onreadystatechange = (function(selector) {
 			return function() {
-				if (xhr.readyState == 4 && xhr.status != 500) {
+				if (xhr.readyState == 4) {
 					var json = JSON.parse(xhr.responseText);
 					if(json['success']){
 						if(json['lowest_price'] !== undefined)
