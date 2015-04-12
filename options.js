@@ -14,6 +14,15 @@ function restore_options() {
   }, function(items) {
     document.getElementById('currencySelect').value = items.currency;
   });
+
+  var selectList = $('#currencySelect option');
+  selectList.sort(function(a,b){
+    a = a.text;
+    b = b.text;
+    return a.localeCompare(b);
+  });
+
+  $('#currencySelect').html(selectList);
 }
 
 document.addEventListener('DOMContentLoaded', restore_options);
