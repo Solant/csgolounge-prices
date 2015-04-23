@@ -23,6 +23,10 @@ function restore_options() {
   });
 
   $('#currencySelect').html(selectList);
+  $('#currencyLabel').text(chrome.i18n.getMessage("currency"));
+  $('#save').text(chrome.i18n.getMessage("save"));
+  $('#faq-header').text(chrome.i18n.getMessage("faqHeader")).css("font-weight", "Bold");
+  $('#faq-content').html(chrome.i18n.getMessage("faqContent"));
 }
 
 document.addEventListener('DOMContentLoaded', restore_options);

@@ -1,13 +1,14 @@
 {
-  "name": "Lounge prices",
+  "name": "Lounge Mate",
   "manifest_version": 2,
-  "version": "0.2",
+  "version": "0.3",
+  "default_locale": "en",
   "permissions": [
     "https://*/",
 	"storage",
 	"tabs"
     ],
-  "description": "Show item prices on csgolounge and dota2lounge sites.",
+  "description": "__MSG_description__",
   "options_ui": {
     "page": "options.html",
     "chrome_style": true
