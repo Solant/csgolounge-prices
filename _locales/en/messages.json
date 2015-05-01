@@ -14,5 +14,8 @@
     },
     "description": {
         "message": "Additional functionality to lounge sites"
+    },
+    "onlineStatus": {
+        "message": "Show user status"
     }
 }

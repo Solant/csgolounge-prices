@@ -2,7 +2,8 @@
 
 function getPricesWithCurrency(){
 	chrome.storage.sync.get({
-		currency: 1
+		currency: 1,
+        status: true
 	}, function(items) {
 		getPrices(items.currency);
 	});

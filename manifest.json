@@ -5,25 +5,27 @@
   "default_locale": "en",
   "permissions": [
     "https://*/",
+    "http://*/",
 	"storage",
 	"tabs"
     ],
   "description": "__MSG_description__",
   "options_ui": {
     "page": "options.html",
-    "chrome_style": true
+    "chrome_style": true,
+    "open_in_tab": true
   },
   "icons": {"48": "icon48.png",
           "128": "icon128.png" },
   "content_scripts": [
     {
       "matches": ["*://csgolounge.com/*"],
-      "js": ["jquery-2.1.3.min.js", "csgolounge.js"],
+      "js": ["jquery-2.1.3.min.js", "csgolounge.js", "status.js"],
       "run_at": "document_end"
     },
     {
       "matches": ["*://dota2lounge.com/*"],
-      "js": ["jquery-2.1.3.min.js", "dota2lounge.js"],
+      "js": ["jquery-2.1.3.min.js", "dota2lounge.js", "status.js"],
       "run_at": "document_end"
     }
   ]
